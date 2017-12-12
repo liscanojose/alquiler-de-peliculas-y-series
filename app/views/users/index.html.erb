@@ -1,6 +1,12 @@
+<div id="container">
+      <div id="content">
 <p id="notice"><%= notice %></p>
 
-<h1>Peliculas y series alquiladas</h1>
+
+<%= paginate @users %>
+
+
+<h1 class="titulo">Peliculas y series alquiladas</h1>
 
 <table>
   <thead>
@@ -37,3 +43,5 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+</div>
+</div>

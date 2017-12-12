@@ -3,12 +3,34 @@
 <head>
   <title>Alquiler</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'chosen', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'custom', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/docsupport/style.css">
+  <link rel="stylesheet" href="/docsupport/prism.css">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; script-src &apos;self&apos; https://ajax.googleapis.com; style-src &apos;self&apos;; img-src &apos;self&apos; data:">
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js" type="text/javascript"></script>
+
+
+
+
 </head>
 <body>
 
 <%= yield %>
 
+<%= javascript_include_tag 'chosen.jquery', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'prism', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'init', 'data-turbolinks-track' => true %>
+
+
 </body>
 </html>
+

@@ -24,7 +24,7 @@ Peliculas
 <br>
 <%= f.collection_select :movie_ids,Movie.all,
                         :id, :titulo, { include_blank: false},
-                         { multiple: true } %>
+                         { multiple: true ,class: "chosen-select"} %>
 </div>
 
 <div  class="field">
@@ -32,11 +32,13 @@ Series
 <br>
 <%= f.collection_select :novel_ids,Novel.all,
                         :id, :titulo, { include_blank: false},
-                         { multiple: true } %>
+                         { multiple: true ,class: "chosen-select"} %>
 </div>
 
 
 <br>
+
+
 
   <div class="actions">
     <%= f.submit %>
