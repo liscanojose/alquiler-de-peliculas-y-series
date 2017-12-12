@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @user.nombre %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<% if @user.movies.length>0 %>
+<p>
+  <strong>Peliculas:</strong>
+  <% @user.movies.each do|movie| %>
+  <%= movie.titulo %>
+  <%end %>
+</p>
+<%end%>
+
+<% if @user.novels.length>0 %>
+<p>
+  <strong>Series:</strong>
+  <% @user.novels.each do|novel| %>
+  <%= novel.titulo %>
+  <%end %>
+</p>
+<%end%>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

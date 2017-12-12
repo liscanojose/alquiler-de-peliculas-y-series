@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Peliculas y series alquiladas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Peliculas alquiladas</th>
+      <th>Series alquiladas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.nombre %>|</td>
+        <td><%= user.email %>|</td>
+        <% if user.movies.length >0
+          user.movies.each do |movie| %>
+        <td><%= movie.titulo %>,</td>
+        <%end end%>
+        <% if user.novels.length >0
+          user.novels.each do |novel| %>
+        <td><%= novel.titulo %>,</td>
+        <%end end%>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
