@@ -1,5 +1,5 @@
 <div id="container">
-      <div id="content">
+<div id="content-index">
 <p id="notice"><%= notice %></p>
 
 
@@ -8,7 +8,7 @@
 
 <h1 class="titulo">Peliculas y series alquiladas</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -22,19 +22,23 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.nombre %>|</td>
-        <td><%= user.email %>|</td>
+        <td><%= user.nombre %></td>
+        <td><%= user.email %></td>
+        <td>
         <% if user.movies.length >0
           user.movies.each do |movie| %>
-        <td><%= movie.titulo %>,</td>
+        <%= movie.titulo %>
         <%end end%>
+        </td>
+        <td>
         <% if user.novels.length >0
-          user.novels.each do |novel| %>
-        <td><%= novel.titulo %>,</td>
+                    user.novels.each do |novel| %>
+        <%= novel.titulo %>
         <%end end%>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </td>
+        <td><%= link_to 'Ver', user,class:"btn btn-sm btn-primary",id:"blanco" %></td>
+        <td><%= link_to 'Editar', edit_user_path(user),class:"btn btn-sm btn-success",id:"blanco" %></td>
+        <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger",id:"blanco"  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,6 +46,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Nuevo Alquiler', new_user_path %>
 </div>
 </div>
