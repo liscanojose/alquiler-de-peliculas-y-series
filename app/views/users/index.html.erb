@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= paginate @users %>
+
 
 
 <h1 class="titulo">Peliculas y series alquiladas</h1>
@@ -38,7 +38,7 @@
         </td>
         <td><%= link_to 'Ver', user,class:"btn btn-sm btn-primary",id:"blanco" %></td>
         <td><%= link_to 'Editar', edit_user_path(user),class:"btn btn-sm btn-success",id:"blanco" %></td>
-        <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger",id:"blanco"  %></td>
+        <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: '¿Estas seguro?' },class:"btn btn-sm btn-danger",id:"blanco"  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,6 +46,10 @@
 
 <br>
 
-<%= link_to 'Nuevo Alquiler', new_user_path %>
+<%= link_to 'Nuevo Alquiler', new_user_path ,class:"btn btn-link",id:"azul" %>
+</div>
+<div class="pag-space">
+<%= paginate @users  , :theme => 'twitter-bootstrap-3',
+                   :pagination_class => "pagination-sm"%>
 </div>
 </div>

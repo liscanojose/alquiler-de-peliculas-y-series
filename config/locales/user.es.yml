@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    # Nombres de Modelos
+    models:
+      # Players
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+  attributes:
+    nombre: Nombre
+    email: Correo
+
